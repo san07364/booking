@@ -1,6 +1,7 @@
 import 'package:booking/textstyle.dart';
 import 'package:booking/utils/device_size.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class SignInScreen extends StatefulWidget {
   const SignInScreen({Key? key}) : super(key: key);
@@ -23,10 +24,10 @@ class _SignInScreenState extends State<SignInScreen> {
         body: SingleChildScrollView(
           child: Column(
             children: [
-              Image.asset('asset/image/display_img.png',height: _height/3,width: _width,fit: BoxFit.fill,),
-              SizedBox(height: _height / 25,),
-              const Text('Sign In',style: Style.largeHeading,),
-              SizedBox(height: _height / 25,),
+              Image.asset('asset/image/display_img.png',height: _height/3.2,width: _width,fit: BoxFit.fill,),
+              SizedBox(height: _height / 30,),
+              const Text('Sign-in',style: Style.largeBoldHeading,),
+              SizedBox(height: _height / 30,),
               Padding(
                 padding: const EdgeInsets.only(left: 22,right: 22),
                 child: Column(
@@ -34,11 +35,12 @@ class _SignInScreenState extends State<SignInScreen> {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text('E-Mail',style: Style.heading,),
-                        SizedBox(height: 10,),
+                        const Text('E-Mail',style: Style.regularText,),
+                        const SizedBox(height: 10,),
                         TextFormField(
                           decoration: InputDecoration(
-                            fillColor: Colors.grey.shade100,
+                              contentPadding: const EdgeInsets.symmetric(vertical: 12,horizontal: 12),
+                              fillColor: Colors.grey.shade100,
                               filled: true,
                             focusedBorder: OutlineInputBorder(
                               borderSide: BorderSide(width: 0,color:Colors.grey.shade100),
@@ -52,16 +54,18 @@ class _SignInScreenState extends State<SignInScreen> {
                         )
                       ],
                     ),
-                    SizedBox(height: 20,),
+                    const SizedBox(height: 20,),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text('Password',style: Style.heading,),
-                        SizedBox(height: 10,),
+                        const Text('Password',style: Style.regularText,),
+                        const SizedBox(height: 10,),
                         TextFormField(
                           obscuringCharacter: '•',
                           obscureText: !_passwordVisible,
+                          style: TextStyle(color: Colors.grey),
                           decoration: InputDecoration(
+                            contentPadding: const EdgeInsets.symmetric(vertical: 12,horizontal: 12),
                               suffixIcon: IconButton(
                                 icon: Icon(
                                   // Based on passwordVisible state choose the icon
@@ -96,7 +100,7 @@ class _SignInScreenState extends State<SignInScreen> {
                       width: _width / 1,
                       child: TextButton(
                         onPressed: (){},
-                        child: Text('Continue',style: Style.buttonText,),
+                        child: const Text('Continue',style: Style.buttonText,),
                         style: TextButton.styleFrom(
                             primary: Colors.white,
                             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
@@ -108,28 +112,36 @@ class _SignInScreenState extends State<SignInScreen> {
                     const SizedBox(height: 30,),
                     Row(
                       children: [
-                        Expanded(child: Container(color: Colors.grey.shade300,height: 2,)),
+                        Expanded(child: Container(color: Colors.grey.shade200,height: 1,)),
                         const Padding(
                           padding: EdgeInsets.symmetric(horizontal: 15),
                           child: Text('or',style: Style.normal,),
                         ),
-                        Expanded(child: Container(color: Colors.grey.shade300,height: 2,)),
+                        Expanded(child: Container(color: Colors.grey.shade200,height: 1,)),
                       ],
                     ),
                     const SizedBox(height: 30,),
                     OutlinedButton(
                         onPressed: (){},
+
                         style: OutlinedButton.styleFrom(
-                          padding: const EdgeInsets.symmetric(vertical: 20,horizontal: 20)
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
+                          padding: const EdgeInsets.symmetric(vertical: 14,horizontal: 20),
+                          side: BorderSide(width: 1.0, color: Colors.grey.shade500),
                         ),
                         child: Row(
                           children: [
-                            Icon(Icons.mail_rounded,color: Colors.grey,),
+                            SvgPicture.asset('asset/image/mail.svg'),
                             SizedBox(width: _width/ 8,),
-                            Text('Sign-in with Phone number',style: Style.normal,)
+                            const Text('Sign-in with Phone number',style: Style.normal,)
                           ],
                         )
                     ),
+                    TextButton(
+                        onPressed: (){},
+                        child: Text('Reset Password',style: TextStyle(color: Colors.grey.shade400),)),
                     const SizedBox(height: 30,),
                   ],
                 ),

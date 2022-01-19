@@ -59,3 +59,5 @@ flutter:
     - family: Circular
       fonts:
         - asset: asset/font/circular-black.otf
+        - asset: asset/font/circular-medium.otf
+          weight: 300
