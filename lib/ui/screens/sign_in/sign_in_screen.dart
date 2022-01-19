@@ -41,11 +41,11 @@ class _SignInScreenState extends State<SignInScreen> {
                             fillColor: Colors.grey.shade100,
                               filled: true,
                             focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(width: 0),
+                              borderSide: BorderSide(width: 0,color:Colors.grey.shade100),
                               borderRadius: BorderRadius.circular(10.0),
                             ),
                             enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(width: 0),
+                              borderSide: BorderSide(width: 0,color:Colors.grey.shade100),
                             borderRadius: BorderRadius.circular(10.0),
                             )
                           ),
@@ -66,9 +66,9 @@ class _SignInScreenState extends State<SignInScreen> {
                                 icon: Icon(
                                   // Based on passwordVisible state choose the icon
                                   _passwordVisible
-                                      ? Icons.visibility
-                                      : Icons.visibility_off,
-                                  color: Theme.of(context).primaryColorDark,
+                                      ? Icons.visibility_outlined
+                                      : Icons.visibility_off_outlined,
+                                  color: Colors.grey.shade800,
                                 ),
                                 onPressed: () {
                                   // Update the state i.e. toogle the state of passwordVisible variable
@@ -80,11 +80,11 @@ class _SignInScreenState extends State<SignInScreen> {
                               fillColor: Colors.grey.shade100,
                               filled: true,
                               focusedBorder: OutlineInputBorder(
-                                borderSide: BorderSide(width: 0),
+                                borderSide: BorderSide(width: 0,color:Colors.grey.shade100),
                                 borderRadius: BorderRadius.circular(10.0),
                               ),
                               enabledBorder: OutlineInputBorder(
-                                borderSide: BorderSide(width: 0),
+                                borderSide: BorderSide(width: 0,color:Colors.grey.shade100),
                                 borderRadius: BorderRadius.circular(10.0),
                               )
                           ),
