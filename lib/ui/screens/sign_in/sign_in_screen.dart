@@ -132,10 +132,14 @@ class _SignInScreenState extends State<SignInScreen> {
                           side: BorderSide(width: 1.0, color: Colors.grey.shade500),
                         ),
                         child: Row(
+                          mainAxisSize: MainAxisSize.max,
                           children: [
                             SvgPicture.asset('asset/image/mail.svg'),
-                            SizedBox(width: _width/ 8,),
-                            const Text('Sign-in with Phone number',style: Style.normal,)
+                            const Expanded(
+                              child:  Align(
+                                  alignment: Alignment.center,
+                                  child:  Text('Sign-in with Phone number',style: Style.normal,)),
+                            )
                           ],
                         )
                     ),
