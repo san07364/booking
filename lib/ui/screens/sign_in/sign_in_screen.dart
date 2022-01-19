@@ -1,4 +1,5 @@
 import 'package:booking/ui/screens/homepage.dart';
+import 'package:booking/utils/pallet.dart';
 import 'package:booking/utils/textstyle.dart';
 import 'package:booking/utils/device_size.dart';
 import 'package:flutter/material.dart';
@@ -145,7 +146,7 @@ class _SignInScreenState extends State<SignInScreen> {
                             primary: Colors.white,
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(12)),
-                            backgroundColor: Colors.blueAccent,
+                            backgroundColor: Pallet.button,
                             padding: const EdgeInsets.symmetric(vertical: 15)),
                       ),
                     ),
