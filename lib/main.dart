@@ -1,3 +1,4 @@
+import 'package:booking/ui/screens/sign_in/sign_in_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'homepage.dart';
@@ -17,8 +18,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        fontFamily: 'Circular'
       ),
-      home: const HomePage(),
+      home: const SignInScreen(),
     );
   }
 }
