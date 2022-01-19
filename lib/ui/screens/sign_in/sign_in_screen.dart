@@ -1,4 +1,5 @@
-import 'package:booking/textstyle.dart';
+import 'package:booking/ui/screens/homepage.dart';
+import 'package:booking/utils/textstyle.dart';
 import 'package:booking/utils/device_size.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -24,48 +25,75 @@ class _SignInScreenState extends State<SignInScreen> {
         body: SingleChildScrollView(
           child: Column(
             children: [
-              Image.asset('asset/image/display_img.png',height: _height/3.2,width: _width,fit: BoxFit.fill,),
-              SizedBox(height: _height / 30,),
-              const Text('Sign-in',style: Style.largeBoldHeading,),
-              SizedBox(height: _height / 30,),
+              Image.asset(
+                'asset/image/display_img.png',
+                height: _height / 3.2,
+                width: _width,
+                fit: BoxFit.fill,
+              ),
+              SizedBox(
+                height: _height / 30,
+              ),
+              const Text(
+                'Sign-in',
+                style: Style.largeBoldHeading,
+              ),
+              SizedBox(
+                height: _height / 30,
+              ),
               Padding(
-                padding: const EdgeInsets.only(left: 22,right: 22),
+                padding: const EdgeInsets.only(left: 22, right: 22),
                 child: Column(
                   children: [
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const Text('E-Mail',style: Style.regularText,),
-                        const SizedBox(height: 10,),
+                        const Text(
+                          'E-Mail',
+                          style: Style.regularText,
+                        ),
+                        const SizedBox(
+                          height: 10,
+                        ),
                         TextFormField(
                           decoration: InputDecoration(
-                              contentPadding: const EdgeInsets.symmetric(vertical: 12,horizontal: 12),
+                              contentPadding: const EdgeInsets.symmetric(
+                                  vertical: 12, horizontal: 12),
                               fillColor: Colors.grey.shade100,
                               filled: true,
-                            focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(width: 0,color:Colors.grey.shade100),
-                              borderRadius: BorderRadius.circular(10.0),
-                            ),
-                            enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(width: 0,color:Colors.grey.shade100),
-                            borderRadius: BorderRadius.circular(10.0),
-                            )
-                          ),
+                              focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                    width: 0, color: Colors.grey.shade100),
+                                borderRadius: BorderRadius.circular(10.0),
+                              ),
+                              enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                    width: 0, color: Colors.grey.shade100),
+                                borderRadius: BorderRadius.circular(10.0),
+                              )),
                         )
                       ],
                     ),
-                    const SizedBox(height: 20,),
+                    const SizedBox(
+                      height: 20,
+                    ),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const Text('Password',style: Style.regularText,),
-                        const SizedBox(height: 10,),
+                        const Text(
+                          'Password',
+                          style: Style.regularText,
+                        ),
+                        const SizedBox(
+                          height: 10,
+                        ),
                         TextFormField(
                           obscuringCharacter: '•',
                           obscureText: !_passwordVisible,
-                          style: TextStyle(color: Colors.grey),
+                          style: const TextStyle(color: Colors.grey),
                           decoration: InputDecoration(
-                            contentPadding: const EdgeInsets.symmetric(vertical: 12,horizontal: 12),
+                              contentPadding: const EdgeInsets.symmetric(
+                                  vertical: 12, horizontal: 12),
                               suffixIcon: IconButton(
                                 icon: Icon(
                                   // Based on passwordVisible state choose the icon
@@ -84,69 +112,104 @@ class _SignInScreenState extends State<SignInScreen> {
                               fillColor: Colors.grey.shade100,
                               filled: true,
                               focusedBorder: OutlineInputBorder(
-                                borderSide: BorderSide(width: 0,color:Colors.grey.shade100),
+                                borderSide: BorderSide(
+                                    width: 0, color: Colors.grey.shade100),
                                 borderRadius: BorderRadius.circular(10.0),
                               ),
                               enabledBorder: OutlineInputBorder(
-                                borderSide: BorderSide(width: 0,color:Colors.grey.shade100),
+                                borderSide: BorderSide(
+                                    width: 0, color: Colors.grey.shade100),
                                 borderRadius: BorderRadius.circular(10.0),
-                              )
-                          ),
+                              )),
                         )
                       ],
                     ),
-                    const SizedBox(height: 30,),
+                    const SizedBox(
+                      height: 30,
+                    ),
                     SizedBox(
                       width: _width / 1,
                       child: TextButton(
-                        onPressed: (){},
-                        child: const Text('Continue',style: Style.buttonText,),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const HomePage()),
+                          );
+                        },
+                        child: const Text(
+                          'Continue',
+                          style: Style.buttonText,
+                        ),
                         style: TextButton.styleFrom(
                             primary: Colors.white,
-                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(12)),
                             backgroundColor: Colors.blueAccent,
-                          padding: const EdgeInsets.symmetric(vertical: 15)
-                        ),
+                            padding: const EdgeInsets.symmetric(vertical: 15)),
                       ),
                     ),
-                    const SizedBox(height: 30,),
+                    const SizedBox(
+                      height: 30,
+                    ),
                     Row(
                       children: [
-                        Expanded(child: Container(color: Colors.grey.shade200,height: 1,)),
+                        Expanded(
+                            child: Container(
+                          color: Colors.grey.shade200,
+                          height: 1,
+                        )),
                         const Padding(
                           padding: EdgeInsets.symmetric(horizontal: 15),
-                          child: Text('or',style: Style.normal,),
+                          child: Text(
+                            'or',
+                            style: Style.normal,
+                          ),
                         ),
-                        Expanded(child: Container(color: Colors.grey.shade200,height: 1,)),
+                        Expanded(
+                            child: Container(
+                          color: Colors.grey.shade200,
+                          height: 1,
+                        )),
                       ],
                     ),
-                    const SizedBox(height: 30,),
+                    const SizedBox(
+                      height: 30,
+                    ),
                     OutlinedButton(
-                        onPressed: (){},
-
+                        onPressed: () {},
                         style: OutlinedButton.styleFrom(
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(8.0),
                           ),
-                          padding: const EdgeInsets.symmetric(vertical: 14,horizontal: 20),
-                          side: BorderSide(width: 1.0, color: Colors.grey.shade500),
+                          padding: const EdgeInsets.symmetric(
+                              vertical: 14, horizontal: 20),
+                          side: BorderSide(
+                              width: 1.0, color: Colors.grey.shade500),
                         ),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             SvgPicture.asset('asset/image/mail.svg'),
                             const Expanded(
-                              child:  Align(
+                              child: Align(
                                   alignment: Alignment.center,
-                                  child:  Text('Sign-in with Phone number',style: Style.normal,)),
+                                  child: Text(
+                                    'Sign-in with Phone number',
+                                    style: Style.normal,
+                                  )),
                             )
                           ],
-                        )
-                    ),
+                        )),
                     TextButton(
-                        onPressed: (){},
-                        child: Text('Reset Password',style: TextStyle(color: Colors.grey.shade400),)),
-                    const SizedBox(height: 30,),
+                        onPressed: () {},
+                        child: Text(
+                          'Reset Password',
+                          style: TextStyle(color: Colors.grey.shade400),
+                        )),
+                    const SizedBox(
+                      height: 30,
+                    ),
                   ],
                 ),
               ),

@@ -1,6 +1,6 @@
 import 'package:booking/model/event.dart';
-import 'package:booking/pallet.dart';
-import 'package:booking/textstyle.dart';
+import 'package:booking/utils/pallet.dart';
+import 'package:booking/utils/textstyle.dart';
 import 'package:booking/widgets/icon_text.dart';
 import 'package:booking/widgets/rating_bar.dart';
 import 'package:flutter/material.dart';
@@ -34,6 +34,7 @@ class EventWidget extends StatelessWidget {
         ),
         ListView.builder(
             shrinkWrap: true,
+            primary: false,
             itemCount: event.activities.length,
             itemBuilder: (_, i) {
               var activity = event.activities[i];
@@ -67,28 +68,34 @@ class EventWidget extends StatelessWidget {
                     const SizedBox(
                       height: 11,
                     ),
-                    SizedBox(
-                      width: double.infinity,
-                      child: Wrap(
-                        alignment: WrapAlignment.spaceBetween,
-                        children: [
-                          IconText(
-                              text: activity.time,
-                              asset: "asset/image/clock.svg"),
-                          const SizedBox(
-                            width: 18,
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Flexible(
+                          flex: 2,
+                          fit: FlexFit.loose,
+                          child: Wrap(
+                            runSpacing: 5,
+                            children: [
+                              IconText(
+                                  text: activity.time,
+                                  asset: "asset/image/clock.svg"),
+                              const SizedBox(
+                                width: 18,
+                              ),
+                              IconText(
+                                  text: activity.mode,
+                                  asset: "asset/image/flag.svg"),
+                              const SizedBox(
+                                width: 18,
+                              ),
+                            ],
                           ),
-                          IconText(
-                              text: activity.mode,
-                              asset: "asset/image/flag.svg"),
-                          const SizedBox(
-                            width: 18,
-                          ),
-                          IconText(
-                              text: activity.status,
-                              asset: "asset/image/loading.svg")
-                        ],
-                      ),
+                        ),
+                        IconText(
+                            text: activity.status,
+                            asset: "asset/image/loading.svg")
+                      ],
                     ),
                   ],
                 ),

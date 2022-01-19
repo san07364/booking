@@ -1,5 +1,5 @@
-import 'package:booking/pallet.dart';
-import 'package:booking/textstyle.dart';
+import 'package:booking/utils/pallet.dart';
+import 'package:booking/utils/textstyle.dart';
 import 'package:flutter/material.dart';
 
 class DateWidget extends StatefulWidget {

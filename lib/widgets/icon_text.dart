@@ -1,4 +1,4 @@
-import 'package:booking/textstyle.dart';
+import 'package:booking/utils/textstyle.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 

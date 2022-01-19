@@ -1,6 +1,6 @@
 import 'package:booking/model/dummy_data.dart';
-import 'package:booking/pallet.dart';
-import 'package:booking/textstyle.dart';
+import 'package:booking/utils/pallet.dart';
+import 'package:booking/utils/textstyle.dart';
 import 'package:booking/widgets/date_widget.dart';
 import 'package:booking/widgets/event_widget.dart';
 import 'package:flutter/material.dart';
@@ -42,22 +42,44 @@ class _HomePageState extends State<HomePage> {
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: SvgPicture.asset("asset/image/bookings.svg"),
+            activeIcon: SvgPicture.asset(
+              "asset/image/bookings.svg",
+              color: Pallet.primary,
+            ),
             label: 'Bookings',
           ),
           BottomNavigationBarItem(
-            icon: SvgPicture.asset("asset/image/check_in.svg"),
+            icon: SvgPicture.asset(
+              "asset/image/check_in.svg",
+            ),
+            activeIcon: SvgPicture.asset(
+              "asset/image/check_in.svg",
+              color: Pallet.primary,
+            ),
             label: 'Check-In',
           ),
           BottomNavigationBarItem(
             icon: SvgPicture.asset("asset/image/return.svg"),
+            activeIcon: SvgPicture.asset(
+              "asset/image/return.svg",
+              color: Pallet.primary,
+            ),
             label: 'Return',
           ),
           BottomNavigationBarItem(
             icon: SvgPicture.asset("asset/image/tracking.svg"),
+            activeIcon: SvgPicture.asset(
+              "asset/image/tracking.svg",
+              color: Pallet.primary,
+            ),
             label: 'Tracking',
           ),
           BottomNavigationBarItem(
             icon: SvgPicture.asset("asset/image/reporting.svg"),
+            activeIcon: SvgPicture.asset(
+              "asset/image/reporting.svg",
+              color: Pallet.primary,
+            ),
             label: 'Reporting',
           ),
         ],
@@ -76,11 +98,12 @@ class _HomePageState extends State<HomePage> {
               child: Padding(
                 padding: const EdgeInsets.all(20),
                 child: SingleChildScrollView(
+                    primary: true,
                     child: Column(
-                  children: List.generate(kDummyData.length, (index) {
-                    return EventWidget(event: kDummyData[index]);
-                  }),
-                )),
+                      children: List.generate(kDummyData.length, (index) {
+                        return EventWidget(event: kDummyData[index]);
+                      }),
+                    )),
               ),
             )
           ],
