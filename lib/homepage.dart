@@ -1,6 +1,8 @@
+import 'package:booking/model/dummy_data.dart';
 import 'package:booking/pallet.dart';
 import 'package:booking/textstyle.dart';
 import 'package:booking/widgets/date_widget.dart';
+import 'package:booking/widgets/event_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -69,10 +71,17 @@ class _HomePageState extends State<HomePage> {
       body: SafeArea(
         child: Column(
           children: [
-            DateWidget(),
-            Padding(
-              padding: EdgeInsets.all(20),
-              child: Column(),
+            const DateWidget(),
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.all(20),
+                child: SingleChildScrollView(
+                    child: Column(
+                  children: List.generate(kDummyData.length, (index) {
+                    return EventWidget(event: kDummyData[index]);
+                  }),
+                )),
+              ),
             )
           ],
         ),

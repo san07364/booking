@@ -46,8 +46,9 @@ class _DateWidgetState extends State<DateWidget> {
                         ),
                         InkWell(
                           onTap: () {
+                            isSelected = List.filled(7, false);
                             setState(() {
-                              isSelected[index] = !isSelected[index];
+                              isSelected[index] = true;
                             });
                           },
                           child: CircleAvatar(
