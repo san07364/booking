@@ -81,12 +81,18 @@ class _HomePageState extends State<HomePage> {
           child: Column(
             children: [
               Container(
-                color: Pallet.primary,
+                decoration: BoxDecoration(
+                  color: Pallet.primary,
+                  border: Border.all(width: 0, color: Pallet.primary),
+                ),
                 height: 55,
               ),
               Container(
                 padding: const EdgeInsets.all(8.0),
-                color: Pallet.primary,
+                decoration: BoxDecoration(
+                  color: Pallet.primary,
+                  border: Border.all(width: 0, color: Pallet.primary),
+                ),
                 child: Row(
                   children: [
                     IconButton(

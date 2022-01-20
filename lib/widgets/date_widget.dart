@@ -20,7 +20,10 @@ class _DateWidgetState extends State<DateWidget> {
       clipper: CustomClipPath(),
       child: Container(
           padding: const EdgeInsets.all(8),
-          color: Pallet.primary,
+          decoration: BoxDecoration(
+            color: Pallet.primary,
+            border: Border.all(width: 0, color: Pallet.primary),
+          ),
           child: Column(
             children: [
               SizedBox(
