@@ -19,17 +19,18 @@ class _DateWidgetState extends State<DateWidget> {
     return ClipPath(
       clipper: CustomClipPath(),
       child: Container(
+          padding: const EdgeInsets.all(8),
           color: Pallet.primary,
           child: Column(
             children: [
               SizedBox(
-                height: 13,
+                height: 6,
                 width: size.width,
               ),
               SizedBox(
                 width: size.width,
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   mainAxisSize: MainAxisSize.max,
                   children: List.generate(days.length, (index) {
                     return Column(

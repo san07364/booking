@@ -17,23 +17,9 @@ class _HomePageState extends State<HomePage> {
   int index = 0;
   @override
   Widget build(BuildContext context) {
+    var width = MediaQuery.of(context).size.width;
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Pallet.primary,
-        elevation: 0,
-        title: Text(
-          "Bookings",
-          style: Style.heading.copyWith(color: Colors.white),
-        ),
-        centerTitle: true,
-        leading: IconButton(
-          onPressed: () {},
-          icon: const Icon(
-            Icons.menu,
-            color: Colors.white,
-          ),
-        ),
-      ),
+      backgroundColor: Pallet.primary,
       bottomNavigationBar: BottomNavigationBar(
         selectedLabelStyle: Style.small.copyWith(color: Pallet.primary),
         unselectedLabelStyle: Style.small.copyWith(color: Pallet.unselected),
@@ -90,22 +76,53 @@ class _HomePageState extends State<HomePage> {
         },
       ),
       body: SafeArea(
-        child: Column(
-          children: [
-            const DateWidget(),
-            Expanded(
-              child: Padding(
-                padding: const EdgeInsets.all(20),
-                child: SingleChildScrollView(
-                    primary: true,
-                    child: Column(
-                      children: List.generate(kDummyData.length, (index) {
-                        return EventWidget(event: kDummyData[index]);
-                      }),
-                    )),
+        child: Container(
+          color: Colors.white,
+          child: Column(
+            children: [
+              Container(
+                color: Pallet.primary,
+                height: 55,
               ),
-            )
-          ],
+              Container(
+                padding: const EdgeInsets.all(8.0),
+                color: Pallet.primary,
+                child: Row(
+                  children: [
+                    IconButton(
+                      onPressed: () {},
+                      icon: const Icon(
+                        Icons.menu,
+                        color: Colors.white,
+                      ),
+                    ),
+                    SizedBox(
+                      width: width * 0.25,
+                    ),
+                    Center(
+                      child: Text(
+                        "Bookings",
+                        style: Style.heading.copyWith(color: Colors.white),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              const DateWidget(),
+              Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.all(20),
+                  child: SingleChildScrollView(
+                      primary: true,
+                      child: Column(
+                        children: List.generate(kDummyData.length, (index) {
+                          return EventWidget(event: kDummyData[index]);
+                        }),
+                      )),
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );
