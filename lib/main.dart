@@ -1,8 +1,6 @@
 import 'package:booking/ui/screens/sign_in/sign_in_screen.dart';
 import 'package:flutter/material.dart';
 
-import 'ui/screens/homepage.dart';
-
 void main() {
   runApp(const MyApp());
 }
